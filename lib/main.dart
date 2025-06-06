@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:shop_project/screens/product_overview_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ShopProject());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ShopProject extends StatelessWidget {
+  const ShopProject({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const HomePage(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
@@ -32,15 +31,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      home: const ProductOverviewPage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ProductOverviewPage();
-  }
-}
