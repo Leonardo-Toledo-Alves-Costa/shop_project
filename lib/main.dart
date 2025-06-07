@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_project/models/product_list.dart';
 import 'package:shop_project/screens/product_overview_page.dart';
 import 'package:shop_project/screens/project_detail.dart';
 import 'package:shop_project/utils/routes.dart';
@@ -12,31 +14,34 @@ class ShopProject extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: Colors.blue,
-          secondary: Colors.greenAccent,
-        ),
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(
-            fontFamily: 'Morning',
-            fontSize: 68.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-            letterSpacing: 2.0,
+    return ChangeNotifierProvider(
+      create: (_) => ProductList(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            primary: Colors.blue,
+            secondary: Colors.greenAccent,
           ),
-          bodyMedium: TextStyle(
-            fontSize: 18.0,
-            color: Colors.black87,
+          textTheme: const TextTheme(
+            displayLarge: TextStyle(
+              fontFamily: 'Morning',
+              fontSize: 68.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              letterSpacing: 2.0,
+            ),
+            bodyMedium: TextStyle(
+              fontSize: 18.0,
+              color: Colors.black87,
+            ),
           ),
         ),
+        home: const ProductOverviewPage(),
+        routes: {
+          AppRoutes.projectDetail: (context) => const ProjectDetail(),
+        },
       ),
-      home: const ProductOverviewPage(),
-      routes: {
-        AppRoutes.projectDetail: (context) => const ProjectDetail(),
-      },
     );
   }
 }
