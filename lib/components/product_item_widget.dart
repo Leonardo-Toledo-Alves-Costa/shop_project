@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_project/models/product.dart';
+import 'package:shop_project/utils/routes.dart';
 
 class ProductItemWidget extends StatelessWidget {
   const ProductItemWidget({super.key, required this.product});
@@ -28,7 +29,15 @@ class ProductItemWidget extends StatelessWidget {
             color: Theme.of(context).primaryColor
             ),
         ),
-        child: Image.network(product.imageUrl, fit: BoxFit.cover,),
+        child: GestureDetector(
+          child: Image.network(product.imageUrl, fit: BoxFit.cover,),
+          onTap: () {
+            Navigator.of(context).pushNamed(
+              AppRoutes.projectDetail,
+              arguments: product
+            );
+          },
+          ),
       ),
     );
   }

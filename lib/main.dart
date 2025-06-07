@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_project/screens/product_overview_page.dart';
+import 'package:shop_project/screens/project_detail.dart';
+import 'package:shop_project/utils/routes.dart';
 
 void main() {
   runApp(const ShopProject());
@@ -22,7 +24,7 @@ class ShopProject extends StatelessWidget {
             fontFamily: 'Morning',
             fontSize: 68.0,
             fontWeight: FontWeight.bold,
-            color: Colors.red,
+            color: Colors.white,
             letterSpacing: 2.0,
           ),
           bodyMedium: TextStyle(
@@ -32,6 +34,9 @@ class ShopProject extends StatelessWidget {
         ),
       ),
       home: const ProductOverviewPage(),
+      routes: {
+        AppRoutes.projectDetail: (context) => const ProjectDetail(),
+      },
     );
   }
 }
