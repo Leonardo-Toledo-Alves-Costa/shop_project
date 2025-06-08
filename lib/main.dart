@@ -4,6 +4,7 @@ import 'package:shop_project/models/cart.dart';
 import 'package:shop_project/models/order_list.dart';
 import 'package:shop_project/models/product_list.dart';
 import 'package:shop_project/screens/cart_page.dart';
+import 'package:shop_project/screens/orders_page.dart';
 import 'package:shop_project/screens/product_overview_page.dart';
 import 'package:shop_project/screens/project_detail.dart';
 import 'package:shop_project/utils/routes.dart';
@@ -44,10 +45,11 @@ class ShopProject extends StatelessWidget {
               ),
             ),
           ),
-          home: const ProductOverviewPage(),
           routes: {
+            AppRoutes.homePage: (context) => const ProductOverviewPage(),
             AppRoutes.projectDetail: (context) => const ProjectDetail(),
             AppRoutes.cart: (context) => const CartPage(),
+            AppRoutes.orders: (context) => const OrdersPage(),
           },
         ),
       );

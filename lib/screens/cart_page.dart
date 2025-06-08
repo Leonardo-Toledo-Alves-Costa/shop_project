@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_project/components/app_drawer.dart';
 import 'package:shop_project/components/cart_item_widget.dart';
 import 'package:shop_project/models/cart.dart';
 import 'package:shop_project/models/order_list.dart';
@@ -20,6 +21,7 @@ class CartPage extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.blue,
       ),
+      drawer: AppDrawer(),
       body: Expanded(child: ListView.builder(
         itemCount: cartItems.length,
         itemBuilder: (context, i) => CartItemwidget(cartItem: cartItems[i]),
