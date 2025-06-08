@@ -13,7 +13,7 @@ class CartPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Compras',
+          'carrinho',
           style: Theme.of(context).textTheme.displayLarge,
           ),
           centerTitle: true,
@@ -25,7 +25,7 @@ class CartPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: SizedBox(
-        height: 60,
+        height: 80,
         child: Card(
           elevation: 20,
           margin: EdgeInsets.zero,

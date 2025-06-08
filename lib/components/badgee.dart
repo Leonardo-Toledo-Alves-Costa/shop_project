@@ -24,13 +24,13 @@ class Badgee extends StatelessWidget {
           ),
           constraints: BoxConstraints(
             minHeight: 10,
-            minWidth: 13,
+            minWidth: 14,
           ),
           child: Text(
             value,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 10, color: Colors.white
+              fontSize: 12, color: Colors.white
             ),
             ),
         ),
