@@ -26,9 +26,13 @@ class ProductItemWidget extends StatelessWidget {
               color: Colors.blue,
             ),
           ),
-          title: Text(
-            product.name,
-            textAlign: TextAlign.center,
+          title: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              product.name,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 18),
+            ),
           ) ,
           trailing: IconButton(
             onPressed: () {
