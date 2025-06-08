@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shop_project/components/badgee.dart';
 import 'package:shop_project/components/product_grid.dart';
 import 'package:shop_project/models/cart.dart';
+import 'package:shop_project/utils/routes.dart';
 
 
 enum FilterOptions {
@@ -67,7 +68,9 @@ class _ProductOverviewPageState extends State<ProductOverviewPage> {
         child: child!,
       ),
       child: IconButton(
-        onPressed: () {}, 
+        onPressed: () {
+          Navigator.pushNamed(context, AppRoutes.cart);
+        }, 
         icon: Icon(Icons.shopping_cart_sharp, color: Colors.white,),
       ),
     )
