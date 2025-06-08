@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_project/components/badgee.dart';
 import 'package:shop_project/components/product_grid.dart';
+import 'package:shop_project/models/cart.dart';
 
 
 enum FilterOptions {
@@ -30,7 +33,7 @@ class _ProductOverviewPageState extends State<ProductOverviewPage> {
         backgroundColor: Colors.blue,
         actions: [
     Padding(
-      padding: const EdgeInsets.only(right: 16.0),
+      padding: const EdgeInsets.only(right: 60.0),
       child: CircleAvatar(
         backgroundImage: AssetImage('assets/images/logoAsimov.png'),
         radius: 20,
@@ -57,6 +60,16 @@ class _ProductOverviewPageState extends State<ProductOverviewPage> {
               }
               });
             }
+    ),
+    Consumer<Cart>(
+      builder: (context, cart, child) => Badgee(
+        value: cart.itemsQuantity().toString(),
+        child: child!,
+      ),
+      child: IconButton(
+        onPressed: () {}, 
+        icon: Icon(Icons.shopping_cart_sharp, color: Colors.white,),
+      ),
     )
   ],
       ),
